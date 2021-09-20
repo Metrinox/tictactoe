@@ -11,11 +11,19 @@ def render(): #displays the board
 	print(f'{mem[3]} | {mem[4]} | {mem[5]}')
 	print(f'{mem[6]} | {mem[7]} | {mem[8]}')
 def turn(player):
+	Valid = False
 	print(f'It is Player {player}\'s turn! ')
-	'''Input = int( input('Choose a box:')) #check if input is valid (WORK ON THIS)
-	if Input >= 0 and Input <= 8 and mem[Input] == '_':
-		return Input'''
-	return int(input('Choose a box:'))
+	play = int(input('Choose a box:'))
+	while Valid == False:
+		if play < 0 and play >= 9:
+			play = int(input('Out of Bounds! Try again:'))
+			continue
+		if mem[play] != '_':
+			play = int(input('Box already taken! Try again:'))
+			continue
+		else:
+			Valid = True
+	return play
 	
 #def update(turn, choice):	
 
