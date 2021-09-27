@@ -54,3 +54,6 @@ while isWon == 0:
 	if isWon != 0:
 		break
 print(f"Player {isWon} has won the game!")
+while True:
+	x += 1
+	x -= 1
